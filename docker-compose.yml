@@ -1,0 +1,143 @@
+version: '3'
+
+services:
+  db-user:
+    image: postgres
+    container_name: db-user
+    restart: always
+    ports:
+      - "1234:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: energy-management-db
+    networks:
+      assignment1-network:
+        ipv4_address: 172.16.200.13
+
+  user-service:
+    container_name: user-service
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db-user
+    networks:
+      assignment1-network:
+        ipv4_address: 172.16.200.12
+
+  db-device:
+    image: postgres
+    container_name: db-device
+    restart: always
+    ports:
+      - "1235:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: devices-db
+    networks:
+      assignment1-network:
+        ipv4_address: 172.16.200.14
+
+  device-service:
+    container_name: device-service
+    build:
+      context: ./device-service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db-device
+    networks:
+      assignment1-network:
+        ipv4_address: 172.16.200.11
+
+  db-monitoring:
+    image: postgres
+    container_name: db-monitoring
+    restart: always
+    ports:
+      - "1236:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: measurements-db
+    networks:
+      assignment1-network:
+        ipv4_address: 172.16.200.15
+
+  monitoring-service:
+    container_name: monitoring-service
+    build:
+      context: ./monitoring-service
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    depends_on:
+      - db-device
+    networks:
+      assignment1-network:
+        ipv4_address: 172.16.200.16
+
+  authentication-service:
+    container_name: authentication-service
+    build:
+      context: ./authentication-service
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    networks:
+      assignment1-network:
+        ipv4_address: 172.16.200.17
+
+  db-chat:
+    image: postgres
+    container_name: db-chat
+    restart: always
+    ports:
+      - "1237:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: chat-db
+    networks:
+      assignment1-network:
+        ipv4_address: 172.16.200.18
+
+  chat-service:
+    container_name: chat-service
+    build:
+      context: ./chat-service
+      dockerfile: Dockerfile
+    ports:
+      - "8085:8085"
+    depends_on:
+      - db-chat
+    networks:
+      assignment1-network:
+        ipv4_address: 172.16.200.19
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      assignment1-network:
+        ipv4_address: 172.16.200.10
+
+networks:
+  assignment1-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.200.0/24"
+
+volumes:
+  mongo:
+    driver: local

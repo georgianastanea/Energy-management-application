@@ -1,0 +1,12 @@
+.date-picker {
+    width: 150px; 
+    margin: 0 auto; 
+    display: block; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+  }
+
+.div-date-picker{
+    margin-left: 20px;
+}

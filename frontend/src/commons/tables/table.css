@@ -1,0 +1,9 @@
+.ReactTable .rt-tr {
+    transition: background-color 0.3s;
+    color: black;
+}
+
+.ReactTable .rt-tr:hover {
+    background-color: #e0e0e0; 
+    cursor: pointer; 
+}

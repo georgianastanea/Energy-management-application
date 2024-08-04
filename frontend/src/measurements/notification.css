@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h3 {
+  font-family: Quicksand;
+}
+
+.alert {
+  width: 40%;
+  height: 10%; /* Adjusted width */
+  margin: 10px auto; /* Adjusted margin */
+  padding: 15px; /* Adjusted padding */
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px #ccc; /* Adjusted box shadow */
+}
+
+.close {
+  position: absolute;
+  width: 20px; /* Adjusted width */
+  height: 20px; /* Adjusted height */
+  opacity: 0.5;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50%;
+  right: 8px; /* Adjusted right */
+  top: 10px; /* Adjusted top */
+  text-align: center;
+  font-size: 1em; /* Adjusted font size */
+  cursor: pointer;
+}
+
+.simple-alert {
+  background-color: #ebebeb;
+  border-left: 3px solid darken(#ebebeb, 50);
+  .close {
+    border-color: darken(#ebebeb, 50);
+    color: darken(#ebebeb, 50);
+  }
+}
+
+.success-alert {
+  background-color: #a8f0c6;
+  border-left: 3px solid darken(#a8f0c6, 50);
+  .close {
+    border-color: darken(#a8f0c6, 50);
+    color: darken(#a8f0c6, 50);
+  }
+}
+
+.danger-alert {
+  background-color: #f7a7a3;
+  border-left: 3px solid darken(#f7a7a3, 50);
+  .close {
+    border-color: darken(#f7a7a3, 50);
+    color: darken(#f7a7a3, 50);
+  }
+}
+
+.warning-alert {
+  background-color: #ffd48a;
+  border-left: 3px solid darken(#ffd48a, 50);
+  .close {
+    border-color: darken(#ffd48a, 50);
+    color: darken(#ffd48a, 50);
+  }
+}

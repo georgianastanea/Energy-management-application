@@ -1,0 +1,209 @@
+/* Add this CSS to your stylesheets */
+
+.chat-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .connected-persons {
+    width: 25%;
+    min-width: 200px;
+    background-color: #f3f3f3;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  .connected-persons h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .connected-persons ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .connected-persons li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .connected-persons li:hover {
+    background-color: #ddd;
+  }
+  
+  .connected-persons li:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .chat-tab {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .chat-tab h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .chat-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .connected-persons {
+    width: 25%;
+    min-width: 200px;
+    background-color: #f3f3f3;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  .connected-persons h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .connected-persons ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .connected-persons li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .connected-persons li:hover {
+    background-color: #ddd;
+  }
+  
+  .connected-persons li:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .chat-tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: fit-content;
+  }
+  
+  .chat-tab h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .chat-messages {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-message {
+    margin-bottom: 12px;
+    word-wrap: break-word;
+  }
+  
+  .message-sender {
+    align-self: flex-start;
+    color: #000000;
+  }
+  
+  .message-receiver {
+    align-self: flex-end;
+    color: #000000;
+  }
+  
+  .message-text {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  
+  .message-input {
+    margin-top: 40%;
+    display: flex;
+  }
+
+  .input-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .message-input input {
+  flex: 1;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  }
+  
+  .send-button {
+    margin-left: 10px;
+    width: 7%;
+    padding: 10px;
+    background-color: #87c5ef;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .send-button:hover {
+    background-color: #5796c0;
+  }
+  
+
+  .notified-user {
+    background-color: lightblue; 
+    color:black;
+  }
+
+  .user {
+    color:black;
+  }
+
+  .selected-user{
+    background-color: #5796c0;
+    color:black;
+  }
+
+  .last-message {
+    position: relative;
+  }
+  
+  .last-message:after {
+    content: '\2714'; /* Unicode character for a checkmark */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: green; /* Color of the checkmark */
+  }
+
+  h2{
+    color:black;
+  }
+
+  .typing-indicator{
+    color:black;
+  }
+
+  .seen-indicator{
+    color:black;
+  }
+
